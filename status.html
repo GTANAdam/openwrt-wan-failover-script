@@ -1,0 +1,36 @@
+<!doctype html>
+<title>Connection status</title>
+<style>
+  body { text-align: center; padding: 20px; }
+  @media (min-width: 768px){
+    body{ padding-top: 150px; }
+  }
+  h1 { font-size: 50px; }
+  body { font: 20px Helvetica, sans-serif; color: #333; }
+  article { display: block; text-align: left; max-width: 650px; margin: 0 auto; }
+  a { color: #dc8100; text-decoration: none; }
+  a:hover { color: #333; text-decoration: none; }
+</style>
+
+<article id="rt" />
+
+<script>
+ var str;
+ fetch('sconn').then(response => response.text()).then(text => 
+ {
+   console.log(text);
+   if (text.includes("disconnected"))
+   {
+     document.getElementById("rt").innerHTML = '<h1 style="color: Red;"><span>&#10006;</span> Connection outage!</h1><div><p>No available responsive internet connection source. Both main and failover interaces have failed to respond.</p></div>'
+   }
+   else if (text.includes("failover"))
+   {
+     document.getElementById("rt").innerHTML = '<h1 style="color: OrangeRed;"><span>&#9888;</span> Fail-over connection!</h1><div><p>Due to a connection loss on the Ethernet interface. Wireless fail-over interface is currently being used as the main source of internet connectivity.<p></div>'
+   }
+   else 
+   {
+     document.getElementById("rt").innerHTML = '<h1 style="color: Green;"><span>&#10004;</span> Fully operational</h1><div><p>Ethernet interface is responsive and internet connectivity is available.</p></div>'
+   }
+ });
+</script>
+
