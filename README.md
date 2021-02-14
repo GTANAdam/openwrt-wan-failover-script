@@ -15,4 +15,4 @@
 1. Configure your crontab file
 	1. ``` */2 * * * * /etc/failover/failover.sh ```
 1. Restart crontab service
-	1.1 ``` /etc/init.d/cron reload ```
+	1. ``` /etc/init.d/cron reload ```
