@@ -2,10 +2,10 @@
 
 ### How to install?
 1. Download _.zip_ files
-	> ``` wget https://github.com/rafinhaa/openwrt-wan-failover-script/zipvall/master/ ```
+	> ``` wget https://github.com/GTANadam/openwrt-wan-failover-script/zipvall/master/ ```
 2. Extract _.zip_ file in  **/tmp** folder
 	> ```cd /tmp```	
-	> ``` unzip rafinhaa-openwrt-wan-failover-script-*.zip ```
+	> ``` unzip openwrt-wan-failover-script-master.zip ```
 4. Move files in **www** folder to **/www** folder
 	> ``` mv www/ /www/ ```
 5. Move folder **failover** to **/etc/**
